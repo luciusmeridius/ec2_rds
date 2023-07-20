@@ -162,7 +162,7 @@ resource "aws_instance" "tutorial_web" {
 resource "aws_eip" "tutorial_web_eip" {
   count    = var.settings.web_app.count
   instance = aws_instance.tutorial_web[count.index].id
-  vpc      = true
+ # vpc      = true
   tags = {
     Name = "tutorial_web_eip_${count.index}"
   }
